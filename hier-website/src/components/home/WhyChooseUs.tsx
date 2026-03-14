@@ -22,6 +22,7 @@ const pillars = [
 ]
 
 export default function WhyChooseUs() {
+  const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
   return (
     <section
       className="py-24 lg:py-32 relative overflow-hidden noise-overlay"
@@ -37,46 +38,77 @@ export default function WhyChooseUs() {
       />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8" style={{ zIndex: 1 }}>
-        {/* Header */}
-        <div className="max-w-2xl mb-16">
-          <div className="divider-gold mb-6" />
-          <h2
-            className="text-4xl lg:text-5xl font-bold text-white mb-5"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Why Developers &amp; Investors
-            <br />
-            <em className="font-normal" style={{ color: 'var(--color-gold-light)' }}>Choose Hier &amp; Company</em>
-          </h2>
-          <p className="text-lg leading-relaxed text-white/60">
-            In a market full of generalists, we bring focused expertise, genuine accountability, and 50 years of proven results across Colorado&apos;s most dynamic real estate corridor.
-          </p>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
 
-        {/* Pillars grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 rounded-sm overflow-hidden">
-          {pillars.map((p, i) => (
-            <div
-              key={i}
-              className="glass-card p-8 lg:p-10 hover:bg-white/10 transition-colors duration-300"
-            >
-              <div
-                className="text-5xl font-bold mb-4 leading-none"
-                style={{ fontFamily: 'var(--font-display)', color: 'rgba(201,144,42,0.25)' }}
-              >
-                {p.number}
-              </div>
-              <h3
-                className="text-xl font-semibold text-white mb-3"
+          {/* Left: header + pillars */}
+          <div className="lg:col-span-2">
+            <div className="max-w-2xl mb-12">
+              <div className="divider-gold mb-6" />
+              <h2
+                className="text-4xl lg:text-5xl font-bold text-white mb-5"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
-                {p.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-white/55">
-                {p.body}
+                Why Developers &amp; Investors
+                <br />
+                <em className="font-normal" style={{ color: 'var(--color-gold-light)' }}>Choose Hier &amp; Company</em>
+              </h2>
+              <p className="text-lg leading-relaxed text-white/60">
+                In a market full of generalists, we bring focused expertise, genuine accountability, and 50 years of proven results across Colorado&apos;s most dynamic real estate corridor.
               </p>
             </div>
-          ))}
+
+            {/* Pillars grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 rounded-sm overflow-hidden">
+              {pillars.map((p, i) => (
+                <div
+                  key={i}
+                  className="glass-card p-8 lg:p-10 hover:bg-white/10 transition-colors duration-300"
+                >
+                  <div
+                    className="text-5xl font-bold mb-4 leading-none"
+                    style={{ fontFamily: 'var(--font-display)', color: 'rgba(201,144,42,0.25)' }}
+                  >
+                    {p.number}
+                  </div>
+                  <h3
+                    className="text-xl font-semibold text-white mb-3"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    {p.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-white/55">
+                    {p.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: photo stack (desktop only) */}
+          <div className="hidden lg:flex flex-col gap-4 pt-4">
+            <div className="relative rounded-sm overflow-hidden" style={{ height: '260px' }}>
+              <img
+                src={`${BASE}/warehouse-c-units.jpg`}
+                alt="Modern industrial flex units"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative rounded-sm overflow-hidden" style={{ height: '200px' }}>
+              <img
+                src={`${BASE}/warehouse-silo.jpg`}
+                alt="Personal Warehouse development"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              className="rounded-sm p-5 text-center"
+              style={{ background: 'rgba(201,144,42,0.08)', border: '1px solid rgba(201,144,42,0.2)' }}
+            >
+              <div className="text-2xl font-bold mb-1" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-gold)' }}>50+</div>
+              <div className="text-xs tracking-widest uppercase text-white/40">Years Building Colorado</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

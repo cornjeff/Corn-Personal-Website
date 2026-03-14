@@ -1,16 +1,37 @@
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 interface PageHeroProps {
   eyebrow: string
   title: string
   titleAccent?: string
   description: string
+  backgroundImage?: string
 }
 
-export default function PageHero({ eyebrow, title, titleAccent, description }: PageHeroProps) {
+export default function PageHero({ eyebrow, title, titleAccent, description, backgroundImage }: PageHeroProps) {
   return (
     <section
       className="relative pt-44 pb-24 overflow-hidden noise-overlay"
       style={{ background: 'var(--color-forest)' }}
     >
+      {/* Optional background photo */}
+      {backgroundImage && (
+        <>
+          <div
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: `url('${BASE}/${backgroundImage}')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(135deg, rgba(28,46,38,0.9) 0%, rgba(28,46,38,0.6) 100%)' }}
+          />
+        </>
+      )}
+
       {/* Subtle grid */}
       <div
         className="absolute inset-0 pointer-events-none"

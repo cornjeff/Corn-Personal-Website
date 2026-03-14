@@ -59,6 +59,7 @@ export default function PropertyManagementPage() {
         title="Property Management"
         titleAccent="Protecting Your Investment Daily"
         description="We manage your property as if it were our own. With primarily in-house maintenance staff, local contractor relationships, and transparent financial reporting, Hier & Company delivers hands-on management that maximizes NOI and protects long-term asset value."
+        backgroundImage="loft-suite-interior.jpg"
       />
 
       {/* Property Types */}

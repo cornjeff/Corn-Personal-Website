@@ -44,6 +44,7 @@ export default function BrokeragePage() {
         title="Commercial & Residential"
         titleAccent="Brokerage Services"
         description="Representing buyers, sellers, landlords, and tenants across the Denver Metro, Front Range, and Douglas County. Our brokerage team combines deep local market knowledge with a full-service platform to ensure every transaction achieves optimal outcomes."
+        backgroundImage="commercial-strip-modern.jpg"
       />
 
       {/* Commercial */}

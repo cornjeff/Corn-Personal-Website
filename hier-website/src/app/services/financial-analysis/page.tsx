@@ -68,6 +68,7 @@ export default function FinancialAnalysisPage() {
         title="Financial Analysis"
         titleAccent="& Real Estate Consulting"
         description="We help investors, developers, and property owners make confident decisions backed by rigorous analysis. With deep market knowledge and 50+ years of Front Range real estate experience, Hier & Company's financial analysis services provide the clarity you need before committing capital."
+        backgroundImage="dransfeld-aerial.jpg"
       />
 
       {/* Offerings */}

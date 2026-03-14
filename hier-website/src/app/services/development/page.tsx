@@ -60,6 +60,7 @@ export default function DevelopmentPage() {
         title="Real Estate Development"
         titleAccent="From Concept to Completion"
         description="For over 50 years, Hier & Company has been transforming raw land and repositioning commercial assets across Colorado's Front Range. Our 75+ years of combined development experience spans rural estate subdivisions to urban commercial parks."
+        backgroundImage="warehouse-aerial-road.jpg"
       />
 
       {/* Capabilities */}

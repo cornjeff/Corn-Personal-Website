@@ -1,16 +1,29 @@
 import Link from 'next/link'
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 export default function CtaBanner() {
   return (
     <section
       className="py-20 lg:py-24 relative overflow-hidden"
       style={{ background: 'var(--color-charcoal)' }}
     >
+      {/* Background photo */}
+      <div
+        className="absolute inset-0 opacity-15"
+        style={{
+          backgroundImage: `url('${BASE}/solar-automotive.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      {/* Overlay to keep text readable */}
+      <div className="absolute inset-0" style={{ background: 'rgba(26,31,36,0.7)' }} />
       {/* Gold gradient glow */}
       <div
         className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at 100% 50%, rgba(201,144,42,0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at 100% 50%, rgba(201,144,42,0.15) 0%, transparent 70%)',
         }}
       />
 
