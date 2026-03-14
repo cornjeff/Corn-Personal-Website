@@ -12,6 +12,8 @@ export const metadata: Metadata = {
 
 const categories = ['All', 'Development', 'Commercial', 'Residential', 'Property Management']
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 const properties = [
   {
     category: 'Commercial',
@@ -22,7 +24,7 @@ const properties = [
     rate: '$20.00–$30.41/SF/YR',
     description: 'Multi-suite office building in Castle Rock offering flexible unit sizes for professional tenants.',
     status: 'Managed',
-    photo: '/commercial-brick-building.jpg',
+    photo: `${BASE}/commercial-brick-building.jpg`,
     photoAlt: 'Commercial office building exterior',
   },
   {
@@ -34,7 +36,7 @@ const properties = [
     rate: 'Contact for pricing',
     description: 'Street-level retail in a high-visibility Castle Rock corridor. Ideal for boutique, service, or food & beverage tenants.',
     status: 'Leasing',
-    photo: '/commercial-strip-modern.jpg',
+    photo: `${BASE}/commercial-strip-modern.jpg`,
     photoAlt: 'Modern retail strip exterior',
   },
   {
@@ -46,7 +48,7 @@ const properties = [
     rate: 'Contact for pricing',
     description: 'Modern flex space combining office and light-warehouse functionality in a newer Castle Rock development.',
     status: 'Available',
-    photo: '/loft-suite-interior.jpg',
+    photo: `${BASE}/loft-suite-interior.jpg`,
     photoAlt: 'Industrial loft flex space interior',
   },
   {
@@ -58,7 +60,7 @@ const properties = [
     rate: 'Contact for pricing',
     description: 'Industrial unit suitable for light manufacturing, storage, or distribution. Grade-level access.',
     status: 'Available',
-    photo: '/warehouse-d-units.jpg',
+    photo: `${BASE}/warehouse-d-units.jpg`,
     photoAlt: 'Industrial warehouse units with overhead doors',
   },
 ]

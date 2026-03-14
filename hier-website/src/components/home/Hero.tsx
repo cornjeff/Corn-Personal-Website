@@ -73,7 +73,7 @@ export default function Hero() {
 
       {/* Hero background photo */}
       <div
-        className="absolute inset-0 opacity-25"
+        className="absolute inset-0 opacity-50"
         style={{
           backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/warehouse-aerial-overview.jpg')`,
           backgroundSize: 'cover',
@@ -85,7 +85,7 @@ export default function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(135deg, rgba(28,46,38,0.95) 0%, rgba(28,46,38,0.7) 60%, rgba(28,46,38,0.85) 100%)',
+          background: 'linear-gradient(135deg, rgba(28,46,38,0.82) 0%, rgba(28,46,38,0.55) 60%, rgba(28,46,38,0.72) 100%)',
           zIndex: 1,
         }}
       />

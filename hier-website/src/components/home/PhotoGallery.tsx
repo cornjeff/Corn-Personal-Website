@@ -1,12 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 const photos = [
-  { src: '/solar-automotive.jpg', alt: 'Commercial retail development, Castle Rock CO' },
-  { src: '/warehouse-silo.jpg', alt: 'Personal Warehouse development, Boerne TX' },
-  { src: '/warehouse-d01-exterior.jpg', alt: 'Modern industrial flex space' },
-  { src: '/dransfeld-aerial.jpg', alt: 'Dransfeld Business Park aerial view' },
-  { src: '/depot-district.jpg', alt: 'Castle Rock historic depot district' },
+  { src: `${BASE}/solar-automotive.jpg`, alt: 'Commercial retail development, Castle Rock CO' },
+  { src: `${BASE}/warehouse-silo.jpg`, alt: 'Personal Warehouse development, Boerne TX' },
+  { src: `${BASE}/warehouse-d01-exterior.jpg`, alt: 'Modern industrial flex space' },
+  { src: `${BASE}/dransfeld-aerial.jpg`, alt: 'Dransfeld Business Park aerial view' },
+  { src: `${BASE}/depot-district.jpg`, alt: 'Castle Rock historic depot district' },
 ]
 
 export default function PhotoGallery() {
