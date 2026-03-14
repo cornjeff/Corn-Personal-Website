@@ -71,11 +71,11 @@ export default function Hero() {
       {/* Animated canvas background */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }} />
 
-      {/* Background image placeholder — replace src with actual Castle Rock / property photo */}
+      {/* Hero background photo */}
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-25"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1582407947304-fd86f28f8b74?w=1920&q=80')`,
+          backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/warehouse-aerial-overview.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           zIndex: 0,

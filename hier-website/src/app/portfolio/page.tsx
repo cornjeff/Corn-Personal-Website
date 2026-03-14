@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import PageHero from '@/components/shared/PageHero'
 import CtaBanner from '@/components/home/CtaBanner'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Portfolio',
@@ -21,6 +22,8 @@ const properties = [
     rate: '$20.00–$30.41/SF/YR',
     description: 'Multi-suite office building in Castle Rock offering flexible unit sizes for professional tenants.',
     status: 'Managed',
+    photo: '/commercial-brick-building.jpg',
+    photoAlt: 'Commercial office building exterior',
   },
   {
     category: 'Commercial',
@@ -31,6 +34,8 @@ const properties = [
     rate: 'Contact for pricing',
     description: 'Street-level retail in a high-visibility Castle Rock corridor. Ideal for boutique, service, or food & beverage tenants.',
     status: 'Leasing',
+    photo: '/commercial-strip-modern.jpg',
+    photoAlt: 'Modern retail strip exterior',
   },
   {
     category: 'Commercial',
@@ -41,6 +46,8 @@ const properties = [
     rate: 'Contact for pricing',
     description: 'Modern flex space combining office and light-warehouse functionality in a newer Castle Rock development.',
     status: 'Available',
+    photo: '/loft-suite-interior.jpg',
+    photoAlt: 'Industrial loft flex space interior',
   },
   {
     category: 'Commercial',
@@ -51,6 +58,8 @@ const properties = [
     rate: 'Contact for pricing',
     description: 'Industrial unit suitable for light manufacturing, storage, or distribution. Grade-level access.',
     status: 'Available',
+    photo: '/warehouse-d-units.jpg',
+    photoAlt: 'Industrial warehouse units with overhead doors',
   },
 ]
 
@@ -92,18 +101,18 @@ export default function PortfolioPage() {
             {properties.map((p, i) => (
               <div
                 key={i}
-                className="rounded-sm overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                className="group rounded-sm overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
                 style={{ background: 'var(--color-white)', border: '1px solid rgba(0,0,0,0.06)' }}
               >
-                {/* Image placeholder — replace with real property photo */}
-                <div
-                  className="h-48 flex items-center justify-center text-sm"
-                  style={{ background: 'var(--color-forest)', color: 'rgba(255,255,255,0.3)' }}
-                >
-                  <div className="text-center">
-                    <div className="text-2xl mb-2 opacity-30">🏢</div>
-                    <span className="text-xs tracking-wide uppercase opacity-40">Photo Coming Soon</span>
-                  </div>
+                {/* Property photo */}
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src={p.photo}
+                    alt={p.photoAlt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
 
                 <div className="p-6 flex flex-col flex-1">

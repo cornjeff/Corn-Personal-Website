@@ -2,6 +2,7 @@ import Hero from '@/components/home/Hero'
 import StatsBar from '@/components/home/StatsBar'
 import ServicesGrid from '@/components/home/ServicesGrid'
 import WhyChooseUs from '@/components/home/WhyChooseUs'
+import PhotoGallery from '@/components/home/PhotoGallery'
 import CtaBanner from '@/components/home/CtaBanner'
 
 export default function HomePage() {
@@ -11,6 +12,7 @@ export default function HomePage() {
       <StatsBar />
       <ServicesGrid />
       <WhyChooseUs />
+      <PhotoGallery />
       <CtaBanner />
     </>
   )
