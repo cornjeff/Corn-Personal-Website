@@ -58,16 +58,18 @@ export default function Nav() {
               </svg>
             </button>
             {servicesOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 bg-[#1C2E26]/98 backdrop-blur-md border border-white/10 rounded-lg shadow-2xl py-2 overflow-hidden">
-                {services.map((s) => (
-                  <Link
-                    key={s.href}
-                    href={s.href}
-                    className="block px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
-                  >
-                    {s.label}
-                  </Link>
-                ))}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-52 pt-3">
+                <div className="bg-[#1C2E26]/98 backdrop-blur-md border border-white/10 rounded-lg shadow-2xl py-2 overflow-hidden">
+                  {services.map((s) => (
+                    <Link
+                      key={s.href}
+                      href={s.href}
+                      className="block px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>
